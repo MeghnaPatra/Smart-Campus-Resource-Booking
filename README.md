@@ -1,64 +1,16 @@
-# Smart-Campus-Resource-Booking
-# Smart Campus Resource Booking System 🏫
+# React + Vite
 
-A full-stack smart campus resource management and booking system designed to simplify the process of discovering, reserving, and managing campus resources.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-The system provides a centralized platform for managing resources, handling bookings, validating availability, and supporting notifications and analytics.
+Currently, two official plugins are available:
 
-## Overview
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Managing classrooms, laboratories, meeting rooms, and other campus resources can become difficult when availability and bookings are handled manually.
+## React Compiler
 
-The Smart Campus Resource Booking System provides a centralized digital platform where users can view available resources, make bookings, and manage their reservations while administrators can manage resources and monitor booking activity.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Key Features
+## Expanding the ESLint configuration
 
-- 🔐 User authentication and authorization
-- 👤 JWT-based authentication
-- 🏫 Campus resource management
-- 📅 Resource booking and reservation management
-- ⏰ Start and end time validation
-- 🚫 Prevention of overlapping bookings
-- 👥 Resource capacity validation
-- 🔔 Notification service
-- 📊 Booking and resource analytics
-- 🗄️ MongoDB-based data storage
-- ⚡ Redis integration
-- 📨 Event-driven communication using Kafka
-- 🐳 Docker-based deployment and service management
-
-## System Architecture
-
-```text
-                    ┌─────────────────────┐
-                    │      Frontend       │
-                    │   User Interface    │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │    Authentication   │
-                    │    & Authorization  │
-                    └──────────┬──────────┘
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-              ▼                ▼                ▼
-       ┌────────────┐   ┌────────────┐   ┌────────────┐
-       │  Resource  │   │  Booking   │   │Notification│
-       │  Service   │   │  Service   │   │  Service   │
-       └──────┬─────┘   └──────┬─────┘   └──────┬─────┘
-              │                │                │
-              └────────────────┼────────────────┘
-                               │
-                ┌──────────────┴──────────────┐
-                │                             │
-                ▼                             ▼
-         ┌────────────┐                 ┌────────────┐
-         │  MongoDB   │                 │   Redis    │
-         └────────────┘                 └────────────┘
-                              
-                       ┌────────────┐
-                       │   Kafka    │
-                       │  / Events  │
-                       └────────────┘
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
